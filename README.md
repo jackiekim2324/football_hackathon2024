@@ -21,8 +21,10 @@ This project focuses on using Northwestern (and BIG 10) soccer match data to ana
 - This will automatically save all generated heatmaps to a 'heatmaps' subfolder with game-specific filenames
 
 - Before executing this script:
-- Update the config.json file:
--   Change the value of "path" to the folder path of PDF match reports.
+- Update "path" variable in config.json file to give the folder path of PDF match reports:
+  ```
+    "path":"folder_path_of_pdf_reports"
+  ```
 
 `Defensive Stats.R`
 - This script requires the usage of `player-combined-data.csv`.
