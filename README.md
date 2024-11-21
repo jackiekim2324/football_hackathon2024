@@ -20,7 +20,6 @@ This project focuses on using Northwestern (and BIG 10) soccer match data to ana
 - Creates detailed heatmaps showing 1) player position density using a yellow-orange-red color scheme 2) full soccer field visualization 
 - This will automatically save all generated heatmaps to a 'heatmaps' subfolder with game-specific filenames
 
-- Before executing this script:
 - Update "path" variable in config.json file to give the folder path of PDF match reports:
   ```
     "path":"folder_path_of_pdf_reports"
