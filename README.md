@@ -19,3 +19,7 @@ This project focuses on using Northwestern (and BIG 10) soccer match data to ana
 - This script extracts player (starters and subs) positions from a specific page of each PDF match report.
 - Creates detailed heatmaps showing 1) player position density using a yellow-orange-red color scheme 2) full soccer field visualization 
 - This will automatically save all generated heatmaps to a 'heatmaps' subfolder with game-specific filenames
+
+`Defensive Stats.R`
+- This script requires the usage of `player-combined-data.csv`.
+- This will output the bar charts of Northwestern Defensive Statistics, as well as how they stack up against the six Tournament bound teams in the BIG 10. 
