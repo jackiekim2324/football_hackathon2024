@@ -13,4 +13,4 @@ This project focuses on using Northwestern (and BIG 10) soccer match data to ana
 `goalkeeper_stat.py`
 - This script requires the usage of `player-combined-data.csv`.
 - You will use `nu_goalkeeper_stat` to output the desired goalkeeper's bar chart stats.
-- This will output bar charts of the NU goalkeeper stats.
+- This will output bar charts of the Northwestern Wildcat Goalkeeper's stats.
