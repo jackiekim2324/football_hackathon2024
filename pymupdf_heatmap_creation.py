@@ -161,25 +161,37 @@ def create_heatmap(positions, title="Player Positions Heatmap", show_points=True
     ax.set_aspect('equal')
     return fig, ax
 
-def analyze_northwestern_games(base_dir=None):
+def find_folder(folder_name):
+    """
+    Recursively search for a folder starting from current directory.
+    """
+    for path in Path.cwd().rglob(folder_name):
+        if path.is_dir():
+            return path
+    return None
+
+def analyze_northwestern_games():
     """
     Analyze Northwestern's games and create visualizations.
-    
-    Args:
-        base_dir (str, optional): Base directory path. If None, will look for 
-            'Hackathon Data/match-reports/northwestern-2024' in the current directory.
     """
+    base_dir = find_folder('northwestern-2024')
+    
     if base_dir is None:
-        base_dir = Path.cwd() / 'Hackathon Data' / 'match-reports' / 'northwestern-2024'
-    else:
-        base_dir = Path(base_dir)
-        
+        print("\nError: Could not find 'northwestern-2024' folder.")
+        print("Please ensure the folder exists somewhere in or below the current directory.")
+        return
+
     print("\nStarting analysis...")
+    print(f"Found folder at: {base_dir}")
 
     pdf_files = list(Path(base_dir).glob("*.pdf"))
+    if not pdf_files:
+        print("No PDF files found in the northwestern-2024 folder.")
+        return
+        
     output_dir = Path(base_dir) / 'heatmaps'
     output_dir.mkdir(exist_ok=True)
-    
+
     for pdf_file in pdf_files:
         positions = extract_positions_from_pdf(pdf_file)
         if positions:
@@ -197,7 +209,6 @@ def analyze_northwestern_games(base_dir=None):
             )
             plt.close(fig)
     print("\nAnalysis complete! Check the 'heatmaps' folder for output files.")
-
 
 if __name__ == "__main__":
     analyze_northwestern_games()
