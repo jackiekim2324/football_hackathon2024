@@ -161,18 +161,25 @@ def create_heatmap(positions, title="Player Positions Heatmap", show_points=True
     ax.set_aspect('equal')
     return fig, ax
 
-
-def analyze_northwestern_games():
+def analyze_northwestern_games(base_dir=None):
     """
     Analyze Northwestern's games and create visualizations.
+    
+    Args:
+        base_dir (str, optional): Base directory path. If None, will look for 
+            'Hackathon Data/match-reports/northwestern-2024' in the current directory.
     """
-    base_dir = 'D:/Northwestern MLDS/MLDS Hackathon 2024/Hackathon Data/Hackathon Data/match-reports/northwestern-2024'
+    if base_dir is None:
+        base_dir = Path.cwd() / 'Hackathon Data' / 'match-reports' / 'northwestern-2024'
+    else:
+        base_dir = Path(base_dir)
+        
     print("\nStarting analysis...")
 
     pdf_files = list(Path(base_dir).glob("*.pdf"))
     output_dir = Path(base_dir) / 'heatmaps'
     output_dir.mkdir(exist_ok=True)
-
+    
     for pdf_file in pdf_files:
         positions = extract_positions_from_pdf(pdf_file)
         if positions:
