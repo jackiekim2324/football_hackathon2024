@@ -16,6 +16,6 @@ This project focuses on using Northwestern (and BIG 10) soccer match data to ana
 - This will output bar charts of the Northwestern Wildcat Goalkeeper's stats.
 
 `pymupdf_heatmap_creation.py`
-- Thhis script extracts player (starters and subs) positions from a specific page of each PDF match report.
-- Creates detailed heatmaps showing 1) player position density using a yellow-orange-red color scheme 2) full soccer field visualization including penalty areas, goal areas, and center circle 
+- This script extracts player (starters and subs) positions from a specific page of each PDF match report.
+- Creates detailed heatmaps showing 1) player position density using a yellow-orange-red color scheme 2) full soccer field visualization 
 - This will automatically save all generated heatmaps to a 'heatmaps' subfolder with game-specific filenames
